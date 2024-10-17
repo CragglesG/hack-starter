@@ -1,0 +1,55 @@
+### POST request to publish a view to a user's Home tab
+
+POST https://slack.com/api/views.publish
+Content-type: application/json; charset=utf-8;
+Authorization: Bearer SLACK_BOT_TOKEN
+
+{
+  "user_id": "U07RVR6UVGU",
+  "view": {
+    "type": "home",
+    "blocks": [
+      {
+        "type": "header",
+        "text": {
+          "type": "plain_text",
+          "text": "Start Your Hack!",
+          "emoji": true
+        }
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "input",
+        "element": {
+          "type": "plain_text_input",
+          "action_id": "project-name"
+        },
+        "label": {
+          "type": "plain_text",
+          "text": "Project Name",
+          "emoji": true
+        }
+      },
+      {
+        "type": "actions",
+        "elements": [
+          {
+            "type": "button",
+            "text": {
+              "type": "plain_text",
+              "text": "Hack!",
+              "emoji": true
+            },
+            "value": "start-hack-button",
+            "action_id": "start-hack"
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+###

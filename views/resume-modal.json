@@ -1,0 +1,59 @@
+{
+    "type": "modal",
+    "callback_id": "resume-modal",
+    "title": {
+        "type": "plain_text",
+        "text": "Hack Starter",
+        "emoji": true
+    },
+    "submit": {
+		"type": "plain_text",
+		"text": "Submit",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+    "blocks": [
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": "Resume a Hack",
+                "emoji": true
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "input",
+            "element": {
+                "type": "plain_text_input",
+                "action_id": "project-name"
+            },
+            "label": {
+                "type": "plain_text",
+                "text": "Project Name",
+                "emoji": true
+            }
+        },
+        {
+            "type": "actions",
+            "elements": [
+                {
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Resume Hack",
+                        "emoji": true
+                    },
+                    "value": "resume-hack-button",
+                    "action_id": "resume-hack"
+                }
+            ]
+        }
+    ]
+}

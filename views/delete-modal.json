@@ -1,0 +1,66 @@
+{
+    "type": "modal",
+    "callback_id": "delete-modal",
+    "title": {
+        "type": "plain_text",
+        "text": "Hack Starter",
+        "emoji": true
+    },
+    "submit": {
+		"type": "plain_text",
+		"text": "Submit",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+    "blocks": [
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": "Delete a Hack",
+                "emoji": true
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*IMPORTANT: Your Hack will be permanently deleted and will not be recoverable. Make sure you have saved your code elsewhere or pushed it to a remote Git repository.*"
+			}
+		},
+        {
+            "type": "input",
+            "element": {
+                "type": "plain_text_input",
+                "action_id": "project-name"
+            },
+            "label": {
+                "type": "plain_text",
+                "text": "Project Name",
+                "emoji": true
+            }
+        },
+        {
+            "type": "actions",
+            "elements": [
+                {
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Delete Hack",
+                        "emoji": true
+                    },
+                    "value": "delete-hack-button",
+                    "action_id": "delete-hack"
+                }
+            ]
+        }
+    ]
+}

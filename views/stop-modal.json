@@ -1,0 +1,59 @@
+{
+    "type": "modal",
+    "callback_id": "stop-modal",
+    "title": {
+        "type": "plain_text",
+        "text": "Hack Starter",
+        "emoji": true
+    },
+    "submit": {
+		"type": "plain_text",
+		"text": "Submit",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+    "blocks": [
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": "Stop a Hack",
+                "emoji": true
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "input",
+            "element": {
+                "type": "plain_text_input",
+                "action_id": "project-name"
+            },
+            "label": {
+                "type": "plain_text",
+                "text": "Project Name",
+                "emoji": true
+            }
+        },
+        {
+            "type": "actions",
+            "elements": [
+                {
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Stop Hack",
+                        "emoji": true
+                    },
+                    "value": "stop-hack-button",
+                    "action_id": "stop-hack"
+                }
+            ]
+        }
+    ]
+}

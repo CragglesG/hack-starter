@@ -3,8 +3,7 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
-  -e PASSWORD=password [PASSWORD]
+  -e PASSWORD=password [PASSWORD] \
   -p [PORT]:8443 \
-  -v /path/to/code-server/config:/config \
-  --restart unless-stopped \
+  -v ~/.config/code-server/config.yaml:/config \
   lscr.io/linuxserver/code-server:latest

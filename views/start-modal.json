@@ -1,0 +1,78 @@
+{
+    "type": "modal",
+    "callback_id": "start-modal",
+    "title": {
+        "type": "plain_text",
+        "text": "Hack Starter",
+        "emoji": true
+    },
+    "submit": {
+		"type": "plain_text",
+		"text": "Submit",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+    "blocks": [
+        {
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": "Start a Hack",
+                "emoji": true
+            }
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": "*IMPORTANT: Make sure that your project name is lowercase and excludes spaces and special characters (other than - and _)!*"
+            }
+        },
+        {
+            "type": "input",
+            "element": {
+                "type": "plain_text_input",
+                "action_id": "project-name"
+            },
+            "label": {
+                "type": "plain_text",
+                "text": "Project Name",
+                "emoji": true
+            }
+        },
+        {
+            "type": "input",
+            "element": {
+                "type": "plain_text_input",
+                "action_id": "password"
+            },
+            "label": {
+                "type": "plain_text",
+                "text": "Password",
+                "emoji": true
+            }
+        },
+        {
+            "type": "actions",
+            "elements": [
+                {
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Hack!",
+                        "emoji": true
+                    },
+                    "value": "start-hack-button",
+                    "action_id": "start-hack"
+                }
+            ]
+        }
+    ]
+}

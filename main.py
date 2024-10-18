@@ -49,6 +49,18 @@ def update_home_tab(client, event, logger):
                         }
                     },
                     {
+                        "type": "input",
+                        "element": {
+                            "type": "plain_text_input",
+                            "action_id": "password"
+                        },
+                        "label": {
+                            "type": "plain_text",
+                            "text": "Password",
+                            "emoji": True
+                        }
+                    },
+                    {
                         "type": "actions",
                         "elements": [
                             {
@@ -75,7 +87,8 @@ def update_home_tab(client, event, logger):
 def start_hack(ack, body, logger):
     ack()
     request("POST", "https://api.example.com/start-hack", data={"user_id": body["user"]["id"], "username": body["user"]["username"], "project_name":
-        body["view"]["state"]["values"][body["view"]["blocks"][3]["block_id"]]["project-name"]["value"]})
+        body["view"]["state"]["values"][body["view"]["blocks"][3]["block_id"]]["project-name"]["value"], "password":
+        body["view"]["state"]["values"][body["view"]["blocks"][4]["block_id"]]["password"]["value"]})
 
 
 if __name__ == "__main__":

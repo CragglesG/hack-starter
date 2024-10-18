@@ -8,7 +8,7 @@
     },
     "submit": {
 		"type": "plain_text",
-		"text": "Submit",
+		"text": "Hack!",
 		"emoji": true
 	},
 	"close": {
@@ -58,21 +58,6 @@
                 "text": "Password",
                 "emoji": true
             }
-        },
-        {
-            "type": "actions",
-            "elements": [
-                {
-                    "type": "button",
-                    "text": {
-                        "type": "plain_text",
-                        "text": "Hack!",
-                        "emoji": true
-                    },
-                    "value": "start-hack-button",
-                    "action_id": "start-hack"
-                }
-            ]
         }
     ]
 }

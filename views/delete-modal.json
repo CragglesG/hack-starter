@@ -8,7 +8,7 @@
     },
     "submit": {
 		"type": "plain_text",
-		"text": "Submit",
+		"text": "Delete Hack",
 		"emoji": true
 	},
 	"close": {
@@ -46,21 +46,6 @@
                 "text": "Project Name",
                 "emoji": true
             }
-        },
-        {
-            "type": "actions",
-            "elements": [
-                {
-                    "type": "button",
-                    "text": {
-                        "type": "plain_text",
-                        "text": "Delete Hack",
-                        "emoji": true
-                    },
-                    "value": "delete-hack-button",
-                    "action_id": "delete-hack"
-                }
-            ]
         }
     ]
 }

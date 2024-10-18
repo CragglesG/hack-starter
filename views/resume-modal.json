@@ -8,7 +8,7 @@
     },
     "submit": {
 		"type": "plain_text",
-		"text": "Submit",
+		"text": "Resume Hack",
 		"emoji": true
 	},
 	"close": {
@@ -39,21 +39,6 @@
                 "text": "Project Name",
                 "emoji": true
             }
-        },
-        {
-            "type": "actions",
-            "elements": [
-                {
-                    "type": "button",
-                    "text": {
-                        "type": "plain_text",
-                        "text": "Resume Hack",
-                        "emoji": true
-                    },
-                    "value": "resume-hack-button",
-                    "action_id": "resume-hack"
-                }
-            ]
         }
     ]
 }

@@ -29,10 +29,10 @@ def start_hack(ack, body, logger):
         body["view"]["state"]["values"][body["view"]["blocks"][4]["block_id"]]["password"]["value"]})
 
 @app.command("/start-hack")
-def start_hack_command(ack, body, logger):
+def start_hack_command(ack, body, logger, client):
     ack()
     with open("views/start-modal.json") as f:
-        app.client.views_open(trigger_id=body["trigger_id"], view=json.load(f))
+        client.views_open(trigger_id=body["trigger_id"], view=json.load(f))
 
 @app.view_submission("start-modal")
 def start_hack_submission(ack, body, logger):
@@ -42,10 +42,10 @@ def start_hack_submission(ack, body, logger):
         body["view"]["state"]["values"][body["view"]["blocks"][4]["block_id"]]["password"]["value"]})
 
 @app.command("/stop-hack")
-def stop_hack_command(ack, body, logger):
+def stop_hack_command(ack, body, logger, client):
     ack()
     with open("views/stop-modal.json") as f:
-        app.client.views_open(trigger_id=body["trigger_id"], view=json.load(f))
+        client.views_open(trigger_id=body["trigger_id"], view=json.load(f))
 
 @app.view_submission("stop-hack")
 def stop_hack(ack, body, logger):
@@ -53,10 +53,10 @@ def stop_hack(ack, body, logger):
     request("POST", "https://api.example.com/stop-hack", data={"user_id": body["user"]["id"], "project_name": body["view"]["state"]["values"][body["view"]["blocks"][2]["block_id"]]["project-name"]["value"]})
 
 @app.command("/resume-hack")
-def resume_hack_command(ack, body, logger):
+def resume_hack_command(ack, body, logger, client):
     ack()
     with open("views/resume-modal.json") as f:
-        app.client.views_open(trigger_id=body["trigger_id"], view=json.load(f))
+        client.views_open(trigger_id=body["trigger_id"], view=json.load(f))
 
 @app.view_submission("resume-hack")
 def resume_hack(ack, body, logger):
@@ -64,10 +64,10 @@ def resume_hack(ack, body, logger):
     request("POST", "https://api.example.com/resume-hack", data={"user_id": body["user"]["id"], "project_name": body["view"]["state"]["values"][body["view"]["blocks"][2]["block_id"]]["project-name"]["value"]})
 
 @app.command("/delete-hack")
-def delete_hack_command(ack, body, logger):
+def delete_hack_command(ack, body, logger, client):
     ack()
     with open("views/delete-modal.json") as f:
-        app.client.views_open(trigger_id=body["trigger_id"], view=json.load(f))
+        client.views_open(trigger_id=body["trigger_id"], view=json.load(f))
 
 @app.view_submission("delete-hack")
 def delete_hack(ack, body, logger):

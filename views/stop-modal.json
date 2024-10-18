@@ -8,7 +8,7 @@
     },
     "submit": {
 		"type": "plain_text",
-		"text": "Submit",
+		"text": "Stop Hack",
 		"emoji": true
 	},
 	"close": {
@@ -39,21 +39,6 @@
                 "text": "Project Name",
                 "emoji": true
             }
-        },
-        {
-            "type": "actions",
-            "elements": [
-                {
-                    "type": "button",
-                    "text": {
-                        "type": "plain_text",
-                        "text": "Stop Hack",
-                        "emoji": true
-                    },
-                    "value": "stop-hack-button",
-                    "action_id": "stop-hack"
-                }
-            ]
         }
     ]
 }

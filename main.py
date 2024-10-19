@@ -24,7 +24,7 @@ def update_home_tab(client, event, logger):
 @app.action("start-hack")
 def start_hack(ack, body, logger):
     ack()
-    request("POST", "https://api.example.com/start-hack", data={"user_id": body["user"]["id"], "username": body["user"]["username"], "project_name":
+    request("POST", "https://hackstarter-api.craigg.hackclub.app/start-hack", json={"user_id": body["user"]["id"], "username": body["user"]["username"], "project_name":
         body["view"]["state"]["values"][body["view"]["blocks"][3]["block_id"]]["project-name"]["value"], "password":
         body["view"]["state"]["values"][body["view"]["blocks"][4]["block_id"]]["password"]["value"]})
 
@@ -37,7 +37,7 @@ def start_hack_command(ack, body, logger, client):
 @app.view_submission("start-modal")
 def start_hack_submission(ack, body, logger):
     ack()
-    request("POST", "https://api.example.com/start-hack", data={"user_id": body["user"]["id"], "username": body["user"]["username"], "project_name":
+    request("POST", "https://hackstarter-api.craigg.hackclub.app/start-hack", json={"user_id": body["user"]["id"], "username": body["user"]["username"], "project_name":
         body["view"]["state"]["values"][body["view"]["blocks"][3]["block_id"]]["project-name"]["value"], "password":
         body["view"]["state"]["values"][body["view"]["blocks"][4]["block_id"]]["password"]["value"]})
 
@@ -50,7 +50,7 @@ def stop_hack_command(ack, body, logger, client):
 @app.view_submission("stop-hack")
 def stop_hack(ack, body, logger):
     ack()
-    request("POST", "https://api.example.com/stop-hack", data={"user_id": body["user"]["id"], "project_name": body["view"]["state"]["values"][body["view"]["blocks"][2]["block_id"]]["project-name"]["value"]})
+    request("POST", "https://hackstarter-api.craigg.hackclub.app/stop-hack", json={"user_id": body["user"]["id"], "project_name": body["view"]["state"]["values"][body["view"]["blocks"][2]["block_id"]]["project-name"]["value"]})
 
 @app.command("/resume-hack")
 def resume_hack_command(ack, body, logger, client):
@@ -61,7 +61,7 @@ def resume_hack_command(ack, body, logger, client):
 @app.view_submission("resume-hack")
 def resume_hack(ack, body, logger):
     ack()
-    request("POST", "https://api.example.com/resume-hack", data={"user_id": body["user"]["id"], "project_name": body["view"]["state"]["values"][body["view"]["blocks"][2]["block_id"]]["project-name"]["value"]})
+    request("POST", "https://hackstarter-api.craigg.hackclub.app/resume-hack", json={"user_id": body["user"]["id"], "project_name": body["view"]["state"]["values"][body["view"]["blocks"][2]["block_id"]]["project-name"]["value"]})
 
 @app.command("/delete-hack")
 def delete_hack_command(ack, body, logger, client):
@@ -72,7 +72,7 @@ def delete_hack_command(ack, body, logger, client):
 @app.view_submission("delete-hack")
 def delete_hack(ack, body, logger):
     ack()
-    request("POST", "https://api.example.com/delete-hack", data={"user_id": body["user"]["id"], "project_name": body["view"]["state"]["values"][body["view"]["blocks"][2]["block_id"]]["project-name"]["value"]})
+    request("POST", "https://hackstarter-api.craigg.hackclub.app/delete-hack", json={"user_id": body["user"]["id"], "project_name": body["view"]["state"]["values"][body["view"]["blocks"][2]["block_id"]]["project-name"]["value"]})
 
 if __name__ == "__main__":
     app.start(int(os.environ.get("PORT", 3000)))

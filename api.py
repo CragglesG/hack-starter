@@ -1,6 +1,9 @@
 import fastapi
 import uvicorn
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = fastapi.FastAPI()
 
@@ -29,3 +32,6 @@ def restart_hack(data: dict):
 def delete_hack(data: dict):
     os.system(f"docker stop {data["user_id"] + "-" + data["project_name"]}")
     os.system(f"docker rm {data["user_id"] + "-" + data["project_name"]}")
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=os.environ.get("PORT", 8000))

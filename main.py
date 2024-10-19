@@ -75,4 +75,4 @@ def delete_hack(ack, body, logger):
     request("POST", "https://api.example.com/delete-hack", data={"user_id": body["user"]["id"], "project_name": body["view"]["state"]["values"][body["view"]["blocks"][2]["block_id"]]["project-name"]["value"]})
 
 if __name__ == "__main__":
-    app.start(3000)
+    app.start(int(os.environ.get("PORT", 3000)))

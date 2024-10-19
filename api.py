@@ -22,16 +22,16 @@ def start_hack(data: dict):
 
 @app.post("/stop-hack")
 def stop_hack(data: dict):
-    os.system(f"docker stop {data["user_id"] + "-" + data["project_name"]}")
+    os.system(f'docker stop {data["user_id"] + "-" + data["project_name"]}')
 
 @app.post("/resume-hack")
 def restart_hack(data: dict):
-    os.system(f"docker start {data["user_id"] + "-" + data["project_name"]}")
+    os.system(f'docker start {data["user_id"] + "-" + data["project_name"]}')
 
 @app.post("/delete-hack")
 def delete_hack(data: dict):
-    os.system(f"docker stop {data["user_id"] + "-" + data["project_name"]}")
-    os.system(f"docker rm {data["user_id"] + "-" + data["project_name"]}")
+    os.system(f'docker stop {data["user_id"] + "-" + data["project_name"]}')
+    os.system(f'docker rm {data["user_id"] + "-" + data["project_name"]}')
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=os.environ.get("PORT", 8000))
